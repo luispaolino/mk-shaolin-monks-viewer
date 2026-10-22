@@ -13,6 +13,12 @@
   <a href="docs/VIEWER.md">Viewer Manual</a>
 </p>
 
+## Viewer Demo
+
+[![Watch the Shaolin Monks Viewer demo](https://img.youtube.com/vi/5hmiLelFoY4/hqdefault.jpg)](https://youtu.be/5hmiLelFoY4)
+
+[Watch the viewer demo on YouTube](https://youtu.be/5hmiLelFoY4).
+
 ## Overview
 
 Shaolin Monks Viewer reads your original game source to preview models, textures, skeletons, animation clips, stages, music, and concept art. It is an asset-inspection and export tool; it does not require a recompiled game executable or an emulator.
