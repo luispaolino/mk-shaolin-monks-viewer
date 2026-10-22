@@ -17,6 +17,7 @@ def main():
         'licenses/LICENSE.txt': root / 'LICENSE',
         'licenses/XboxXBERecomp-MIT.txt': root / 'licenses/XboxXBERecomp-MIT.txt',
         'licenses/ImGui-components.txt': root / 'licenses/ImGui-components.txt',
+        'licenses/Dear-ImGui-MIT.txt': root / 'licenses/Dear-ImGui-MIT.txt',
         'licenses/THIRD_PARTY.txt': root / 'licenses/THIRD_PARTY.txt',
         'licenses/miniz-MIT.txt': root / 'licenses/miniz-MIT.txt',
     }

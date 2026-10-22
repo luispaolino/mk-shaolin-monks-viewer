@@ -25,7 +25,7 @@ extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND, UINT, WPARAM,
 namespace sv = shaolin::viewer;
 namespace fs = std::filesystem;
 namespace {
-constexpr wchar_t title[] = L"Shaolin Monks Recomp - 3D Viewer";
+constexpr wchar_t title[] = L"Shaolin Monks Viewer";
 LRESULT CALLBACK window_proc(HWND window, UINT message, WPARAM w, LPARAM l) {
   if (ImGui::GetCurrentContext() &&
       ImGui_ImplWin32_WndProcHandler(window, message, w, l))
@@ -841,7 +841,7 @@ struct App {
   }
   void sidebar() {
     ImGui::TextColored({1, .51f, .34f, 1}, "SHAOLIN MONKS");
-    ImGui::TextDisabled("RECOMP  /  3D VIEWER");
+    ImGui::TextDisabled("ASSET  /  3D VIEWER");
     ImGui::Spacing();
     ImGui::BeginDisabled(busy());
     if (ImGui::Button("Open game source...", {-1, 0}))
@@ -1794,7 +1794,7 @@ int wmain(int argc, wchar_t **argv) {
         scenery_time = std::stod(argument());
       else if (a == L"--help") {
         std::cout
-            << "Shaolin Monks Recomp 3D Viewer\n--source "
+            << "Shaolin Monks Viewer\n--source "
                "ISO/XISO/GAMEDATA.WAD/default.xbe\n--inspect [--validate] "
                "[--report report.json]\n--smoke-test [--asset ID] [--clip "
                "INDEX] [--frame FRAME] [--capture image.png]\n"
@@ -2048,7 +2048,7 @@ int wmain(int argc, wchar_t **argv) {
   } catch (const std::exception &e) {
     std::cerr << e.what() << '\n';
     if (!inspect && !validate && !smoke && !ui_smoke)
-      MessageBoxA(nullptr, e.what(), "Shaolin Monks Recomp - 3D Viewer",
+      MessageBoxA(nullptr, e.what(), "Shaolin Monks Viewer",
                   MB_OK | MB_ICONERROR);
     return 1;
   }

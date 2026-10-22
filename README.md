@@ -58,7 +58,21 @@ An extracted source needs all eight archive banks and the original `default.xbe`
 
 The viewer is written in C++20 with Win32, Direct3D 11, and Windows audio APIs. It uses Dear ImGui for its interface, miniz for compressed data, and a small MIT-licensed Xbox disc reader from the pinned XboxXBERecomp SDK.
 
-Only the SDK's `disc.cpp` and `disc.h` are needed for disc reading. The viewer does not link the game runtime, generated game translation, SDL, or Direct3D 12. The current build setup's shared dependency paths are being separated into an independent viewer configuration; build documentation will describe the verified standalone workflow.
+Only the SDK's `disc.cpp` and `disc.h` are needed for disc reading. The viewer does not link the game runtime, generated game translation, SDL, or Direct3D 12. The required library source subsets are included under `third_party/`, with their notices and pinned hashes. No game build or external SDK checkout is required.
+
+## Build
+
+With Windows x64, Python 3 and Visual Studio C++ tools installed:
+
+```powershell
+python tools/build_viewer.py --test
+```
+
+**Validated:** standalone Windows x64 Release build and all 16 existing CTest checks passed.
+
+See [build instructions](docs/BUILDING.md) for prerequisites, output paths and
+the synthetic/headless test workflow. Source-build validation and the retained
+October release executable are separate; the ZIP is not replaced by a new build.
 
 ## Licensing and Credits
 

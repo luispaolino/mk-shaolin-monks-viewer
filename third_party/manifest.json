@@ -1,0 +1,158 @@
+{
+  "hash_policy": "SHA-256 of source with CRLF normalized to LF; subset copied without functional modifications",
+  "dependencies": {
+    "xbox-disc-reader": {
+      "upstream": "https://github.com/TGP482/XboxXBERecomp",
+      "revision": "40e9c35451305f09ca9d86f677e4b9c2c37ff26b",
+      "files": [
+        "runtime/kernel/disc.cpp",
+        "runtime/kernel/disc.h"
+      ]
+    },
+    "imgui": {
+      "upstream": "https://github.com/ocornut/imgui",
+      "version": "1.91.0",
+      "revision": "8199457a7d9e453f8d3d9cadc14683fb54a858b5"
+    },
+    "miniz": {
+      "upstream": "https://github.com/richgel999/miniz",
+      "version": "3.1.0",
+      "declared_archive_revision": "174573d60290f447c13a2b1b3405de2b96e27d6c",
+      "declared_archive_sha256": "dc188cb49e913f14b4583f4a8aae830035e71627570a036ec573a21f5678d65a"
+    }
+  },
+  "files": [
+    {
+      "path": "third_party/imgui/LICENSE.txt",
+      "sha256_lf": "0ebf8feb061536bdebd7c6a365b64808ae3479048b1c44113e19037680c5f2be"
+    },
+    {
+      "path": "third_party/imgui/backends/imgui_impl_dx11.cpp",
+      "sha256_lf": "90ac17849898848cf85e28d9a408160c1e7d7abfc201d052c494ca3937c84a89"
+    },
+    {
+      "path": "third_party/imgui/backends/imgui_impl_dx11.h",
+      "sha256_lf": "b5dde74ca55af2e58c6ceef591a6b64b4bbbe43ae3582e1bce5bfb643a7dde2b"
+    },
+    {
+      "path": "third_party/imgui/backends/imgui_impl_win32.cpp",
+      "sha256_lf": "8b83f38f23004b6887eb1895ff6882b35859615b8ffb0f62207517e982929806"
+    },
+    {
+      "path": "third_party/imgui/backends/imgui_impl_win32.h",
+      "sha256_lf": "8354a2f34495b807f29b4dff0e6b11fb6e06ad92ac2d15a4f8ab2fdd57c199f8"
+    },
+    {
+      "path": "third_party/imgui/imconfig.h",
+      "sha256_lf": "f49f0636fc8be093a41f4661f04cabd1bff5fb49209a57538f407824fb81bb5f"
+    },
+    {
+      "path": "third_party/imgui/imgui.cpp",
+      "sha256_lf": "c1b968bee46479d4383ef84c3794b5c11d7349710612d6d4ce77a92a8acd4909"
+    },
+    {
+      "path": "third_party/imgui/imgui.h",
+      "sha256_lf": "0ba5a8f2ebddb6d9f32f8bd8e08dab8f4a0fdc1a17b10d1dbb3bb60a8f922fb2"
+    },
+    {
+      "path": "third_party/imgui/imgui_draw.cpp",
+      "sha256_lf": "291d5df1c1e4419c05932197599a30daa0e5ba3dc20adfd9913f5b6dd5ad9a07"
+    },
+    {
+      "path": "third_party/imgui/imgui_internal.h",
+      "sha256_lf": "93c8b237f7d79e0f4affa6abfd896e586bb385e97558bb699a3d33bb00de914c"
+    },
+    {
+      "path": "third_party/imgui/imgui_tables.cpp",
+      "sha256_lf": "f4d94aaee884333f1fad83aa75cb90e8b54797eff416e95fd8ab6764dac73065"
+    },
+    {
+      "path": "third_party/imgui/imgui_widgets.cpp",
+      "sha256_lf": "fd56fbb467b41e70905bd50c9a405b22e2c9a06aaa104adbcd46206c795ade66"
+    },
+    {
+      "path": "third_party/imgui/imstb_rectpack.h",
+      "sha256_lf": "2efa3d5f7d003c19743b15155dad9f46d9f9fc783a18893d703b431d3c990972"
+    },
+    {
+      "path": "third_party/imgui/imstb_textedit.h",
+      "sha256_lf": "99d5970b305c9865e7a1fcdeed0ee71cc3701bbc66bec45cf8b0c460e16d9cdd"
+    },
+    {
+      "path": "third_party/imgui/imstb_truetype.h",
+      "sha256_lf": "87f08919ae8e7223451d0e9d06b62829075d3e920c9e6ad436db9d7e7427ffce"
+    },
+    {
+      "path": "third_party/miniz/CMakeLists.txt",
+      "sha256_lf": "c77a883d04d169913c99f14d0666b1f7d8d89402f5dd0878520e993b7d055290"
+    },
+    {
+      "path": "third_party/miniz/ChangeLog.md",
+      "sha256_lf": "08edeef92c433eadd13ffc2ff1a3e26d646054bfada2e79fc4a523729bf8789d"
+    },
+    {
+      "path": "third_party/miniz/Config.cmake.in",
+      "sha256_lf": "b5e27b111af9abc51388098e9c3d72e63f561723e1f1facc6f2713a4f9f8d730"
+    },
+    {
+      "path": "third_party/miniz/LICENSE",
+      "sha256_lf": "6f20fa7672b00e2e975c291df737cf227addf3ad32e36fef3fe0f416e4664d3d"
+    },
+    {
+      "path": "third_party/miniz/miniz.c",
+      "sha256_lf": "f23204efee2bfaffb72a974d2e28c64c3c1d9787144b5c5890f129c465e467bd"
+    },
+    {
+      "path": "third_party/miniz/miniz.h",
+      "sha256_lf": "232abb0b807fd4962a8e61822459dd49baecb61d0e557f23497732978640f6a7"
+    },
+    {
+      "path": "third_party/miniz/miniz.pc.in",
+      "sha256_lf": "f2610ba918e57f65144af3d438fd020965cd3fa2b3bc7391ffbeb99fc85ce331"
+    },
+    {
+      "path": "third_party/miniz/miniz_common.h",
+      "sha256_lf": "6320fa10a5d21db9f78594d92745bc27593c1e6bed657104c22da0a9bd687b49"
+    },
+    {
+      "path": "third_party/miniz/miniz_tdef.c",
+      "sha256_lf": "30aa8bf68ebcd6d15f03e1db3c7e72d70a038d4a44e74e69193185ea9187ecd0"
+    },
+    {
+      "path": "third_party/miniz/miniz_tdef.h",
+      "sha256_lf": "d62da02953c3834dfcbde4db026c6d9345013ef9b0e53185131016a3a4e48c33"
+    },
+    {
+      "path": "third_party/miniz/miniz_tinfl.c",
+      "sha256_lf": "ff9cc5426df23a78070b5b8fa2dcb7aea68faac466169a883b4ffb8727532350"
+    },
+    {
+      "path": "third_party/miniz/miniz_tinfl.h",
+      "sha256_lf": "da4850920fdf09f8877d9affabe1ebba1852ce4b1ebbd121f2ba7a7ea8e57e5d"
+    },
+    {
+      "path": "third_party/miniz/miniz_zip.c",
+      "sha256_lf": "3c1f90797c02ddc9d6bfcdf7079f5ea6f6212f257ed8745f2334dd021d697669"
+    },
+    {
+      "path": "third_party/miniz/miniz_zip.h",
+      "sha256_lf": "b062a5def545445c73fd1d664e35a89165dfb0d996ab848f507244e819cfcf04"
+    },
+    {
+      "path": "third_party/miniz/readme.md",
+      "sha256_lf": "b4ea367be28a36e5386f65118b73962bc659a67936d248be68b7a7c03b8d359b"
+    },
+    {
+      "path": "third_party/xbox-disc-reader/LICENSE",
+      "sha256_lf": "b61d0b216ea6b3a6be922ef85f6348568069fb3c5fc816d021ee66ec43de8157"
+    },
+    {
+      "path": "third_party/xbox-disc-reader/kernel/disc.cpp",
+      "sha256_lf": "db4882b55a02eda3fc73bd7d73e0f39aa254bedec2589c751d5c8d0199427ed6"
+    },
+    {
+      "path": "third_party/xbox-disc-reader/kernel/disc.h",
+      "sha256_lf": "b10161ac0cecddc4d51e6611d053d2b0325e40682150f9db7ea69e0ca7b4ce2c"
+    }
+  ]
+}

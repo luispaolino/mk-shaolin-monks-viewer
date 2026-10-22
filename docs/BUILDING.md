@@ -1,86 +1,55 @@
-# Building
+# Build the standalone viewer
 
-## Tools and inputs
+## Requirements
 
 - Windows x64.
-- Visual Studio 2022 or later, with the C++ workload and Windows SDK.
-- LLVM 21.1.8, with Clang and LLD.
-- Python 3.11 or later and Git.
-- The original USA/Europe `default.xbe`, outside this repository.
+- Visual Studio C++ Build Tools or Visual Studio with the Desktop C++ workload,
+  Windows SDK, and bundled CMake/Ninja tools.
+- Python 3.
 
-The build checks this executable's SHA-256:
-`48240902bf4a04eb89376217c529531032d3370749bcce91a194878cc49db74a`.
+The required ImGui, miniz, and Xbox disc-reader source files are included under
+`third_party/`. The build verifies their pinned content using
+`third_party/manifest.json`. No game port, generated game code, original game
+executable, external SDK checkout, LLVM installation, or network download is
+required to compile the viewer.
 
-The Visual Studio CMake and Ninja tools must be installed.
-The build script loads the Visual Studio developer environment automatically.
-The build downloads the dependencies specified by the pinned SDK.
-
-## SDK
-
-Run these commands from the repository root:
+From the repository root:
 
 ```powershell
-git clone https://github.com/TGP482/XboxXBERecomp.git third_party/XboxXBERecomp
-git -C third_party/XboxXBERecomp checkout 40e9c35451305f09ca9d86f677e4b9c2c37ff26b
+python tools/build_viewer.py --test
 ```
 
-## Compile and test
+The script discovers Visual Studio and configures the x64 developer environment.
+The executable is `build/viewer/ShaolinMonksViewer.exe`. All build intermediates
+stay under `build/`. `--jobs 2` limits compiler parallelism; `--build-dir` selects
+a different output directory.
 
-Replace the example paths with your local paths:
+The existing 16 CTest checks use synthetic data, hidden or windowless WARP
+rendering, queued test input, and silent audio mode. Their temporary fixtures are
+isolated under the build directory. They do not launch a visible game or require
+original game data. These checks do not establish physical-device behavior or
+complete original-game compatibility.
+
+For an already initialized x64 Visual Studio developer shell, the equivalent
+configuration is:
 
 ```powershell
-python tools/build_recomp.py --xbe "C:/Games/ShaolinMonks/default.xbe" --sdk third_party/XboxXBERecomp --llvm "C:/Program Files/LLVM" --test
+cmake -S . -B build/viewer -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build/viewer --parallel 4
+ctest --test-dir build/viewer --output-on-failure
 ```
 
-The executable is `build/release/ShaolinMonksRecomp.exe`.
-After a successful build, the script creates the Windows ZIP and `checksums.txt` in `dist`.
-With `--test`, packaging runs only after the tests pass. `--configure-only` does not create a package.
-Build logs are in `build`.
-Use `--jobs 2` to limit concurrent compiler processes.
-Use `--disc "C:/Games/ShaolinMonks/game.xiso.iso"` to enable the isolated startup regression.
-The real-disc tests run in a hidden window with separate runtime data and saves.
-The manual menu and Ko-op scripts in `tests` accept `--help`.
-
-You can delete the entire `build` directory after closing the game and compiler.
-The next build recreates it and downloads dependencies again.
-Keep the original game files, SDK checkout, and LLVM installation available outside `build`.
-Default saves and AppData settings remain outside this directory.
-Back up custom data first if you deliberately placed it inside `build`.
-
-## Release package
-
-For the independent character, animation, and stage viewer, see [VIEWER.md](VIEWER.md).
-Its build and package commands are separate from the game release below.
-
-The build script packages the application automatically. To regenerate the package without recompiling, run:
+## Packages
 
 ```powershell
-python tools/package_release.py --exe build/release/ShaolinMonksRecomp.exe --version 0.1.0
+python tools/package_viewer.py --exe build/viewer/ShaolinMonksViewer.exe
 ```
 
-The executable includes the first-run setup. The release package is a portable ZIP file.
-The command writes the Windows ZIP and `checksums.txt` to `dist`.
-The ZIP contains `ShaolinMonksRecomp.exe`, `readme.txt`, and `licenses/`.
-The project license is included as `licenses/LICENSE.txt`.
-`README.md`, `UPSTREAM.md`, `AGENTS.md`, and `docs/` remain in the source repository.
-It includes files from an explicit list. It excludes adjacent game files, logs, saves, and machine settings.
-Use the GitHub source download for the corresponding release tag.
+This creates a new local package under `dist/` from the specified executable,
+player instructions, and license notices. Inspect it before distribution.
+The separately retained `release/v1.0.0/` artifact contains the existing October
+2026 executable. Validating the independent source build does not mean that
+the archived executable was rebuilt from this corrected source layout.
 
-Inspect the archive contents before publication.
-Publish the corresponding project source and the required dependency notices with a binary release.
-The generated translation remains a build output derived from the user's game executable.
-The project license does not relicense the original game.
-
-## Source layout
-
-| Directory | Purpose |
-| --- | --- |
-| `src` | Host integration and compatibility code |
-| `config` | Supported executable profile and ABI metadata |
-| `resources` | Windows icon, manifest, and version information |
-| `tests` | Automated and manual regression checks |
-| `tools` | Build, SDK adaptation, and packaging scripts |
-| `docs` | User and developer instructions |
-| `licenses` | Dependency licenses and notices |
-
-Keep build output, game files, and runtime data outside version control.
+Users supply their own supported original game files when running the viewer.
+Never include those files, extracted assets, saves, logs, or captures in a package.

@@ -1,4 +1,4 @@
-Shaolin Monks Recomp - 3D Viewer
+Shaolin Monks Viewer
 
 Run ShaolinMonksViewer.exe and choose Open game source.
 Select your original USA/Europe Xbox ISO/XISO, GAMEDATA.WAD, or default.xbe.
@@ -362,5 +362,5 @@ Project source is licensed GPL-2.0-or-later. See licenses/LICENSE.txt and the
 included third-party notices. The project license does not grant rights to
 Mortal Kombat: Shaolin Monks, its executable, names, artwork, or other assets.
 
-Source: https://github.com/OAleex/ShaolinMonksRecomp
+Source: https://github.com/luispaolino/mk-shaolin-monks-viewer
 Build instructions: docs/VIEWER.md in the source repository.

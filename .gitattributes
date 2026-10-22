@@ -16,3 +16,5 @@
 *.toml text eol=lf
 *.rc text eol=lf
 *.iss text eol=lf
+
+*.zip binary

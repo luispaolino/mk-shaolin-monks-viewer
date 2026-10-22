@@ -311,7 +311,7 @@ void export_fbx(const Model &model, const std::filesystem::path &path) {
        {{"FBXHeaderVersion", {int32_t(1003)}},
         {"FBXVersion", {int32_t(7400)}},
         {"EncryptionType", {int32_t(0)}},
-        {"Creator", {"Shaolin Monks Recomp 3D Viewer"}}}}
+        {"Creator", {"Shaolin Monks Viewer"}}}}
       .write(bytes);
   Node{
       "GlobalSettings", {}, {{"Version", {int32_t(1000)}}, std::move(settings)}}

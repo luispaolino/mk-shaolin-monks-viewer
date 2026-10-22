@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "release_version": "v1.0.0",
-  "state": "prepared; source-tag mapping pending; not published",
+  "state": "October executable archived unchanged; viewer-only source build validated; final release tag not published",
   "prepared_utc": "2026-10-22T15:49:05.493717+00:00",
   "platform": "Windows x64",
   "original_package": "dist/ShaolinMonksViewer-Windows-x64.zip",
@@ -25,7 +25,7 @@
   "source_commit": null,
   "binary_source_commit": null,
   "source_snapshot_file": "SOURCE_SNAPSHOT.json",
-  "source_inventory_sha256": "b4fc87baebf14a7c204a427a63e90fa40e56893c687e8f3c7a4419e92898e1f8",
+  "source_inventory_sha256": "fd9007925abccae0c5edd11db0ef3aa4c6c5543c450be5ba929ffcd23c844f2a",
   "dependency_versions": {
     "XboxXBERecomp_commit": "40e9c35451305f09ca9d86f677e4b9c2c37ff26b",
     "miniz": "3.1.0; pinned in project build configuration"
@@ -37,5 +37,17 @@
     "rebuilt_for_this_release": false,
     "runtime_launched_for_this_check": false,
     "game_data_included": false
+  },
+  "source_scope": "Standalone viewer only; not the broader initial combined import",
+  "standalone_source_validation": {
+    "validated_utc": "2026-10-22T16:54:25.783128+00:00",
+    "configuration": "Windows x64 Release, MSVC, included dependency subsets",
+    "existing_ctest_checks_passed": 16,
+    "ctest_checks_failed": 0,
+    "hidden_or_windowless": true,
+    "synthetic_fixtures": true,
+    "silent_audio": true,
+    "built_executable_sha256": "8a23ba3aed99749fe15f147ddfadc0d39ba4f638541d02ca4a913479cb14b2f3",
+    "replaces_archived_executable": false
   }
 }

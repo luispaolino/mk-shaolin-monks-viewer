@@ -1,6 +1,6 @@
 # Standalone 3D viewer
 
-`ShaolinMonksViewer.exe` is a separate Windows x64 asset viewer for Shaolin Monks Recomp.
+`ShaolinMonksViewer.exe` is a standalone Windows x64 asset viewer for the original Xbox game.
 It reads the original USA/Europe Xbox ISO/XISO or extracted game archives directly.
 It starts with the character catalog and supports textured meshes, original vertex
 normals, skeleton joints, named animation clips, looping playback, frame scrubbing,
@@ -551,24 +551,19 @@ they depend on event state or material passes outside the diffuse preview.
 
 ## Build
 
-The viewer uses C++20, native Win32, Direct3D 11, Dear ImGui, miniz, and
-XboxXBERecomp's read-only disc reader. It does not link the game runtime or SDL.
-Use the pinned SDK and dependency checkout described in [BUILDING.md](BUILDING.md)
-and [UPSTREAM.md](../UPSTREAM.md). Configure the main project first to obtain
-the existing pinned ImGui and miniz sources; a full game build is unnecessary.
-
-From the repository root:
+The independent source build uses the included ImGui, miniz and small Xbox disc
+reader subsets. It does not need a game executable, generated translation, game
+build, external SDK checkout or LLVM. See [BUILDING.md](BUILDING.md) and
+[UPSTREAM.md](../UPSTREAM.md).
 
 ```powershell
-python tools/build_recomp.py --xbe "C:/Games/ShaolinMonks/default.xbe" --sdk third_party/XboxXBERecomp --llvm "C:/Program Files/LLVM" --configure-only
 python tools/build_viewer.py --test
 python tools/package_viewer.py --exe build/viewer/ShaolinMonksViewer.exe
 ```
 
-The viewer build loads the Visual Studio C++ environment automatically and verifies
-the SDK revision. `--sdk`, `--deps`, and `--build-dir` override local input/output paths.
-The game executable and the main Windows release package are unchanged.
-The separate viewer ZIP and its checksum are written to `dist/` using an explicit file list.
+The builder discovers Visual Studio, checks the dependency manifest, and keeps
+outputs under `build/`. Packaging writes a new local ZIP and checksum to `dist/`.
+The retained October release executable has its own recorded provenance.
 
 ## Validation
 

@@ -1,30 +1,30 @@
 # Shaolin Monks Viewer v1.0.0
 
-## Windows x64 package
+Download `ShaolinMonksViewer-v1.0.0-Windows-x64.zip` and verify it using
+`SHA256SUMS.txt`. Extract it, run `ShaolinMonksViewer.exe`, then choose
+**Open game source** and supply your own supported original Xbox game files.
 
-- Asset: `ShaolinMonksViewer-v1.0.0-Windows-x64.zip`
-- Download: **769,402 bytes (0.734 MiB)**.
-- Expanded package: **1,530,012 bytes (1.459 MiB)**.
-- Existing package date: **2026-10-19 UTC**.
+This is a standalone asset viewer for characters, animation, stages, textures,
+music and concept art. Original game files, extracted assets, saves and captures
+are not included. Keep the package's project and third-party license notices.
 
-Browse character models, skeletons and animation clips; inspect stages, textures, concept art and music; and export supported geometry through the standalone viewer.
+## Artifact provenance
 
-## Run
+The retained ZIP is the verified existing package from October 19, 2026 UTC:
+769,402 bytes, expanding to 1,530,012 bytes. Its executable SHA-256 is
+`6ea76a4173ab54c0c6b1d0728ab9f35e2b54fdde3b274de4486be451575d837b`.
+The archived executable and original ZIP bytes have not been replaced or rebuilt.
+Its historical player instructions may reflect the earlier project layout.
 
-Extract the ZIP, run ShaolinMonksViewer.exe, then choose Open game source.
+The current repository source is viewer-only, with included ImGui, miniz and two
+MIT-licensed Xbox disc-reader files. Its independent Windows x64 Release build
+and all 16 synthetic/headless/silent CTest checks were validated separately.
+The new validation executable is not the executable inside this archived ZIP.
 
-Provide your own original game files: the supported USA/Europe Xbox release of Mortal Kombat: Shaolin Monks, supplied as ISO/XISO or a complete extracted game source. No original game image, executable, extracted game library, save, log or capture is included.
+`SOURCE_SNAPSHOT.json` inventories the corrected standalone source in Git's LF
+text form. It does not establish the exact compilation source of the old October
+binary. `PROVENANCE.json` records both artifact and source-validation evidence.
+No final version tag or GitHub Release has been published.
 
-The package includes the executable, player instructions, project GPL text, and XboxXBERecomp, ImGui and miniz notices. Graphics and audio use Windows Direct3D 11, D3DCompiler and XAudio2 facilities; no third-party runtime DLL is packaged.
-
-## Provenance and verification
-
-This version-1 package preserves the verified existing ZIP byte-for-byte. It was not rebuilt or runtime-tested during release preparation. ZIP integrity and the recorded package payload/checksums were checked. The executable matches `build/viewer-rendering/ShaolinMonksViewer.exe`.
-
-Neither executable version metadata nor an exact compilation source commit was recorded. `SOURCE_SNAPSHOT.json` inventories the source available at preparation time, with its original dirty changes included; it is not evidence of a reproducible binary/source match. `PROVENANCE.json` records the artifact hashes and current mapping status.
-
-**Publication status:** prepared locally. Before publishing a final GitHub Release, establish and record the source commit/tag mapping. Do not describe this existing October build as newly compiled. No release tag has been created.
-
-This is the standalone asset viewer. ShaolinMonksRecomp.exe is the separate game recompilation and is not included. The adjacent unversioned extracted viewer folder and the default build/viewer executable are older than this ZIP; they were not used.
-
-Keep all included notices and corresponding-source materials when distributing the package. Attach this ZIP and `SHA256SUMS.txt` to the private GitHub Release; the same files also live in the repository's `release/v1.0.0/` folder.
+Earlier private commits contained a broader combined import. The current tree
+was corrected through normal commits; that private history was preserved.

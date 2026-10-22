@@ -1,33 +1,27 @@
-# Tools and dependencies
+# Library provenance
 
-## XboxXBERecomp
+The viewer uses these library sources, included under `third_party/`:
 
-The active port uses [XboxXBERecomp](https://github.com/TGP482/XboxXBERecomp), copyright 2026 TGP482, under the MIT license.
-The supported SDK revision is `40e9c35451305f09ca9d86f677e4b9c2c37ff26b`.
+| Library | Version / revision | Used content |
+| --- | --- | --- |
+| Dear ImGui | 1.91.0, `8199457a7d9e453f8d3d9cadc14683fb54a858b5` | Core, Win32 and Direct3D 11 backends, required headers |
+| miniz | 3.1.0; declared archive revision `174573d60290f447c13a2b1b3405de2b96e27d6c` | Compression/ZIP library source and CMake inputs |
+| XboxXBERecomp SDK disc reader | `40e9c35451305f09ca9d86f677e4b9c2c37ff26b` | Only `runtime/kernel/disc.cpp` and `disc.h` |
 
-The build script prepares adapted SDK files inside the build directory. It does not change the SDK checkout.
-Local adaptations cover graphics, audio compatibility, movie playback, input, storage, diagnostics, and application startup.
-The SDL report mapping in `src/controller.cpp` derives from this SDK.
-See [licenses/XboxXBERecomp-MIT.txt](licenses/XboxXBERecomp-MIT.txt) for the complete permission notice.
-See [licenses/THIRD_PARTY.txt](licenses/THIRD_PARTY.txt) for the SDK dependency notices.
+The two MIT-licensed disc-reader files total 8,655 original bytes. They read Xbox
+ISO/XISO directory and file data; they do not recompile or execute game code.
+Their includes are standard C++ and OS headers. No other SDK source or checkout
+is needed by this standalone build.
 
-The game executable includes SDL, Dear ImGui, toml++, and miniz.
-The native settings launcher uses Windows system APIs and adds no third-party library.
-The separate standalone viewer uses Win32, Direct3D 11, Dear ImGui, miniz,
-and the pinned SDK's read-only disc reader. It does not link SDL or the game runtime.
-The notices also cover the embedded ImGui font and stb code, plus SDL's HIDAPI and YUV conversion code.
-The recompiler tools use Zydis and Zycore. Those libraries are not linked into the game executable.
-LLVM and [Ghidra](https://github.com/NationalSecurityAgency/ghidra) are development tools; Ghidra was used to analyze the original Xbox XBE. Neither is included in the Windows release package.
+The miniz source was supplied by the existing archive checkout, which has no
+independent `.git` directory. Its declared original archive SHA-256 is
+`dc188cb49e913f14b4583f4a8aae830035e71627570a036ec573a21f5678d65a`.
+Do not mistake a surrounding project's Git HEAD for the miniz revision.
 
-## References
+`third_party/manifest.json` records the included source subset and content hashes,
+normalizing CRLF to LF for Git portability. The build checks that manifest before
+compilation. Source subsets retain their copyright and license notices.
 
-Public xemu, Cxbx-Reloaded, nxdk, and Microsoft documentation informed behavior and ABI checks.
-Reference consultation does not imply that those projects endorse this port.
-The current renderer and host use the SDK and the local adaptations described above.
-This source tree excludes original game images, assets, generated translations, analysis databases, and proprietary SDK files.
-
-## miniz
-
-The ZIP importer uses [miniz 3.1.0](https://github.com/richgel999/miniz), under the MIT license.
-The build pins revision `174573d60290f447c13a2b1b3405de2b96e27d6c` and checks the download checksum.
-See [licenses/miniz-MIT.txt](licenses/miniz-MIT.txt) for the copyright and permission notice.
+The viewer uses Windows APIs, Direct3D 11 and XAudio2. It does not link a game
+host, generated game translation, SDL, or Direct3D 12. Users supply their own
+supported game files at runtime; original game code is not executed by the viewer.
