@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "release_version": "v1.0.0",
+  "state": "prepared; source-tag mapping pending; not published",
+  "prepared_utc": "2026-10-22T15:49:05.493717+00:00",
+  "platform": "Windows x64",
+  "original_package": "dist/ShaolinMonksViewer-Windows-x64.zip",
+  "original_package_modified_utc": "2026-10-19T15:26:56.263671+00:00",
+  "archive": {
+    "filename": "ShaolinMonksViewer-v1.0.0-Windows-x64.zip",
+    "bytes": 769402,
+    "expanded_bytes": 1530012,
+    "sha256": "3fb80a2468a551e0a584082b4ac8cf580b53520434b73f7739efa835b8c6c3b0",
+    "file_count": 7
+  },
+  "executable": {
+    "package_path": "ShaolinMonksViewer.exe",
+    "bytes": 1477632,
+    "sha256": "6ea76a4173ab54c0c6b1d0728ab9f35e2b54fdde3b274de4486be451575d837b",
+    "matching_existing_build": "build/viewer-rendering/ShaolinMonksViewer.exe",
+    "embedded_application_version": null,
+    "embedded_source_commit": null
+  },
+  "source_tag": null,
+  "source_commit": null,
+  "binary_source_commit": null,
+  "source_snapshot_file": "SOURCE_SNAPSHOT.json",
+  "source_inventory_sha256": "b4fc87baebf14a7c204a427a63e90fa40e56893c687e8f3c7a4419e92898e1f8",
+  "dependency_versions": {
+    "XboxXBERecomp_commit": "40e9c35451305f09ca9d86f677e4b9c2c37ff26b",
+    "miniz": "3.1.0; pinned in project build configuration"
+  },
+  "checks": {
+    "zip_crc": "passed",
+    "package_payload": "matched explicit packaging list or package manifest",
+    "binary_matches_existing_build": true,
+    "rebuilt_for_this_release": false,
+    "runtime_launched_for_this_check": false,
+    "game_data_included": false
+  }
+}
