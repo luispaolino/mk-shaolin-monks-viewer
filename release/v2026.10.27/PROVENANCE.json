@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "package_version": "v2026.10.27",
+  "built_utc": "2026-10-27T02:20:37.911770+00:00",
+  "packaged_utc": "2026-10-27T02:23:27.169756+00:00",
+  "platform": "Windows x64",
+  "source_commit": "269c3d34001f95d43c52c0b73e32eb049a34d895",
+  "source_tree": "ff6a491be6a50d1c30e36c9036630f4a65a81037",
+  "source_inventory_sha256": "79b5045099a03e121dec842adad2daab24bfa758b5f2ad25e928b347567ed6c4",
+  "source_snapshot": "SOURCE_SNAPSHOT.json",
+  "archive": {
+    "filename": "ShaolinMonksViewer-v2026.10.27-Windows-x64.zip",
+    "bytes": 1039051,
+    "sha256": "7451672370a614478afe2940e444fcd0ee84a06cc125f05cffa9411840ea7597",
+    "expanded_bytes": 1962938,
+    "file_count": 8
+  },
+  "executable": {
+    "package_path": "ShaolinMonksViewer.exe",
+    "bytes": 1912320,
+    "sha256": "f09d5922a5bb36c890e5db74fb4f6f0cb73098a57976851ec9a38296e465fdad",
+    "embedded_build_date": "Oct 27 2026",
+    "embedded_source_commit": null,
+    "embedded_package_version": null
+  },
+  "build": {
+    "command": "python tools/build_viewer.py --test",
+    "configuration": "Release",
+    "compiler": "MSVC 19.51.36260.0",
+    "windows_sdk": "10.0.26100.0",
+    "cmake_generator": "Ninja",
+    "dependency_manifest": "third_party/manifest.json",
+    "dependency_manifest_sha256": "cb08b7898d9d3a4cf703a3797da38a760f544d2c263949956843527e3ea58d30",
+    "network_or_game_data_required_to_build": false
+  },
+  "package_command": "python tools/package_viewer.py --exe build/viewer/ShaolinMonksViewer.exe",
+  "checks": {
+    "ctest": {
+      "passed": 17,
+      "failed": 0,
+      "tests": [
+        "viewer_assets",
+        "viewer_stages",
+        "viewer_art",
+        "viewer_geometry",
+        "viewer_scenery",
+        "viewer_material",
+        "viewer_glow",
+        "viewer_selection",
+        "viewer_atmosphere",
+        "viewer_interaction",
+        "viewer_particles",
+        "viewer_character_debug",
+        "viewer_joints_lighting",
+        "viewer_music",
+        "viewer_stage_rendering",
+        "viewer_fbx",
+        "viewer_about"
+      ]
+    },
+    "about_visual_review": [
+      "100%",
+      "200%"
+    ],
+    "about_automated_layout": [
+      "100%",
+      "150%",
+      "200%"
+    ],
+    "zip_crc": "passed",
+    "payload_matches_explicit_file_list": true,
+    "packaged_executable_matches_build": true,
+    "pinned_dependencies_match_local_project": true,
+    "viewer_only": true,
+    "original_game_files_included": false,
+    "old_v1_0_0_files_modified": false,
+    "configured_github_actions_workflows": 0,
+    "binary_reproducibility_across_rebuilds_verified": false
+  },
+  "limitations": [
+    "Synthetic hidden/windowless WARP tests and silent audio do not establish physical GPU, speaker, controller or full original-game parity.",
+    "No real-game asset or campaign validation was performed for this packaging update.",
+    "The date is a package label; the executable embeds a development build date but no package version or Git commit identifier."
+  ],
+  "files": [
+    {
+      "path": "ShaolinMonksViewer.exe",
+      "bytes": 1912320,
+      "sha256": "f09d5922a5bb36c890e5db74fb4f6f0cb73098a57976851ec9a38296e465fdad"
+    },
+    {
+      "path": "readme.txt",
+      "bytes": 26369,
+      "sha256": "f0f41d311c62a2e62501c05ca5d7df8fb70943d290195e51f9a4bd448b36164e"
+    },
+    {
+      "path": "licenses/LICENSE.txt",
+      "bytes": 17984,
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+    },
+    {
+      "path": "licenses/XboxXBERecomp-MIT.txt",
+      "bytes": 1063,
+      "sha256": "b61d0b216ea6b3a6be922ef85f6348568069fb3c5fc816d021ee66ec43de8157"
+    },
+    {
+      "path": "licenses/ImGui-components.txt",
+      "bytes": 2401,
+      "sha256": "ad84304264446b7274507c0cda466055309da27e7d8611ea8b385348b484324b"
+    },
+    {
+      "path": "licenses/Dear-ImGui-MIT.txt",
+      "bytes": 1083,
+      "sha256": "0ebf8feb061536bdebd7c6a365b64808ae3479048b1c44113e19037680c5f2be"
+    },
+    {
+      "path": "licenses/THIRD_PARTY.txt",
+      "bytes": 556,
+      "sha256": "6534d31f7f8789d874278e360331c0d6354f2f3d10974968ea6f7661bfafdf68"
+    },
+    {
+      "path": "licenses/miniz-MIT.txt",
+      "bytes": 1162,
+      "sha256": "6f20fa7672b00e2e975c291df737cf227addf3ad32e36fef3fe0f416e4664d3d"
+    }
+  ]
+}

@@ -1,0 +1,724 @@
+{
+  "schema_version": 1,
+  "scope": "Standalone viewer source, build tooling, checked-in application artwork, pinned library subsets and notices only.",
+  "source_commit": "269c3d34001f95d43c52c0b73e32eb049a34d895",
+  "source_tree": "ff6a491be6a50d1c30e36c9036630f4a65a81037",
+  "source_inventory_sha256": "79b5045099a03e121dec842adad2daab24bfa758b5f2ad25e928b347567ed6c4",
+  "inventory_hash_policy": "SHA-256 of compact sorted-key JSON of files; each file hash covers exact committed and built input bytes.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 345,
+      "sha256": "d3815d51f2167ea3f696e8e04ea3c813f0f7ba7dbf81fb37da8e7fdb15b9beb9"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 338,
+      "sha256": "8ec32c4884ad95e88f135a3c8206df40283288d5894e15d1533a332d0ff2e439"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1377,
+      "sha256": "21a84c0bba167b6906d51cf2e7ec41e4d3ffd50ea440883a33528a6afd362193"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "bytes": 7564,
+      "sha256": "1a858e261733239c88b1abdaa6a6d2b0f80321d80583cd91af99dcf2d1c922dd"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 17984,
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4743,
+      "sha256": "e5c4c4fd983978c2d235ee464182a39b3b45512cee2945f5703487518e901c7e"
+    },
+    {
+      "path": "UPSTREAM.md",
+      "bytes": 1594,
+      "sha256": "5b2f22f048fdc5c52ef0988e5c401407af41de077d9417489fad4e2d8d3a1caa"
+    },
+    {
+      "path": "docs/BUILDING.md",
+      "bytes": 2198,
+      "sha256": "97026fb83656ba2fab10e534ed5b6e68f9b5da596e2d7ff14ee29d7d4b2bdf26"
+    },
+    {
+      "path": "docs/VIEWER.md",
+      "bytes": 49576,
+      "sha256": "18caf6f8820a596c7a39bb1c825e7286abf2649e0d19f139e9871ae6f69d0128"
+    },
+    {
+      "path": "licenses/Dear-ImGui-MIT.txt",
+      "bytes": 1083,
+      "sha256": "0ebf8feb061536bdebd7c6a365b64808ae3479048b1c44113e19037680c5f2be"
+    },
+    {
+      "path": "licenses/ImGui-components.txt",
+      "bytes": 2401,
+      "sha256": "ad84304264446b7274507c0cda466055309da27e7d8611ea8b385348b484324b"
+    },
+    {
+      "path": "licenses/NOTICE.txt",
+      "bytes": 266,
+      "sha256": "c151ee081d3c4d3ffd26fa62c743814b239672148ddeb084f9049035be1b7c44"
+    },
+    {
+      "path": "licenses/THIRD_PARTY.txt",
+      "bytes": 556,
+      "sha256": "6534d31f7f8789d874278e360331c0d6354f2f3d10974968ea6f7661bfafdf68"
+    },
+    {
+      "path": "licenses/XboxXBERecomp-MIT.txt",
+      "bytes": 1063,
+      "sha256": "b61d0b216ea6b3a6be922ef85f6348568069fb3c5fc816d021ee66ec43de8157"
+    },
+    {
+      "path": "licenses/miniz-MIT.txt",
+      "bytes": 1162,
+      "sha256": "6f20fa7672b00e2e975c291df737cf227addf3ad32e36fef3fe0f416e4664d3d"
+    },
+    {
+      "path": "resources/viewer-icon.png",
+      "bytes": 1989834,
+      "sha256": "3654d99f1524103614d8438471abe487e12628ae85a5295d947e29ab7c9f6393"
+    },
+    {
+      "path": "resources/viewer-icon.rgba",
+      "bytes": 262152,
+      "sha256": "227811353ce160d8d05675d8eaf0c93877c80a3f859b0d6cb1d8fcb1e8d8bfb5"
+    },
+    {
+      "path": "resources/viewer-readme.txt",
+      "bytes": 26369,
+      "sha256": "f0f41d311c62a2e62501c05ca5d7df8fb70943d290195e51f9a4bd448b36164e"
+    },
+    {
+      "path": "resources/viewer.ico",
+      "bytes": 169426,
+      "sha256": "5f0ea28ed8e6090bb04e14d66a66ac9691cedeb667d2b7b3abfd58643c7ead82"
+    },
+    {
+      "path": "resources/viewer.rc",
+      "bytes": 123,
+      "sha256": "f021ff763a151a5a798b7174568e5dba8b65a2e2147c49292e2f35c6a1a33a4a"
+    },
+    {
+      "path": "resources/viewer_ids.h",
+      "bytes": 66,
+      "sha256": "c5b4240eb3ae51de0abb707c4eef5c353d7c129e438f6fec88fb361420f16db8"
+    },
+    {
+      "path": "src/viewer/action_graph.cpp",
+      "bytes": 2922,
+      "sha256": "6d0ed5b3a0f3ceffa1766366115821587ad02da3507f500d492a655765b60da4"
+    },
+    {
+      "path": "src/viewer/animation.cpp",
+      "bytes": 34144,
+      "sha256": "d4e6afb1252083c1ea694a011752709fbe361984708f87e9617824d650fae7f8"
+    },
+    {
+      "path": "src/viewer/art.cpp",
+      "bytes": 2329,
+      "sha256": "8c433bed1d628e1695a1359f7c52405fe76fc2b7d2c99d0628c9ac1fd94e0df5"
+    },
+    {
+      "path": "src/viewer/assets.cpp",
+      "bytes": 58049,
+      "sha256": "89aaadcdc184a4ff7c01160644847afa565e07c7fc9f0a6f41f83c52163d409d"
+    },
+    {
+      "path": "src/viewer/assets.h",
+      "bytes": 11360,
+      "sha256": "cd48bc9c19d9cb332afe3b126f15a77b66d0b3cf9cdf6f2641c20db62473e99b"
+    },
+    {
+      "path": "src/viewer/atmosphere.cpp",
+      "bytes": 1323,
+      "sha256": "4ea8ab547ee22b99eb41bc252c1e800c773742a40e4d72680e2ce914e116989b"
+    },
+    {
+      "path": "src/viewer/bloom.h",
+      "bytes": 7843,
+      "sha256": "43c26a2b44a9705fceb06160c28d9ba7812e66b0606b33af1267965cb7e82dc4"
+    },
+    {
+      "path": "src/viewer/branding.h",
+      "bytes": 1140,
+      "sha256": "30c2aae721955c3a45f6aa14b92d1548d023717c6c7bb7e7e708535b878cfe43"
+    },
+    {
+      "path": "src/viewer/camera.h",
+      "bytes": 3625,
+      "sha256": "e55198edfc02fc5a978377068abfb2adbe82a2ad44d3a4bdb7cdc1058eea17f6"
+    },
+    {
+      "path": "src/viewer/character_debug.cpp",
+      "bytes": 44624,
+      "sha256": "4a9979f301840678cd1c569ef35d5e6aa6a90727d11a130eb161c2a01d2c998d"
+    },
+    {
+      "path": "src/viewer/character_debug.h",
+      "bytes": 2110,
+      "sha256": "a9d8a81612a5d6cfea82fb5df434a85a33d6a89fbc28309ac0fa5c5a92d8285a"
+    },
+    {
+      "path": "src/viewer/fbx.cpp",
+      "bytes": 14268,
+      "sha256": "282144647b78f584a865d027159f23c508e9d5d81d5d44d47a6c561034fa8006"
+    },
+    {
+      "path": "src/viewer/geometry.cpp",
+      "bytes": 21225,
+      "sha256": "3a1495b498345848ea846915fb01bf36f741559e39b1a4d609fe88356717c71a"
+    },
+    {
+      "path": "src/viewer/main.cpp",
+      "bytes": 87352,
+      "sha256": "d37866adcd770f9e528fe18b2eeba29d925378dc131fd893dadaad34c7b2fbe0"
+    },
+    {
+      "path": "src/viewer/music.cpp",
+      "bytes": 5638,
+      "sha256": "836593bbf7003f02998142f2d4bb9d5666ea8af18cbedc214aa9eb55e122b679"
+    },
+    {
+      "path": "src/viewer/music.h",
+      "bytes": 949,
+      "sha256": "1f9a0dbcd2f02fb81dca9a439c1d48e3956b3e5081462cfc8378b5e58ce2e4f5"
+    },
+    {
+      "path": "src/viewer/music_player.cpp",
+      "bytes": 3549,
+      "sha256": "68cb6a9c97259586848c59e1dd48e3577f8e3711254ecbd0f6f4b97cf18b2dcd"
+    },
+    {
+      "path": "src/viewer/particles.cpp",
+      "bytes": 22523,
+      "sha256": "f68b8b378892a8ab589ea9d6653c0b49d1f840b01501f3e02cbb7fb9c58dd9e0"
+    },
+    {
+      "path": "src/viewer/renderer.h",
+      "bytes": 43302,
+      "sha256": "a6e30aa085aa9d4a20b5d4b8f2fd15e94c11629732e3a53e9fd3bb82128f30eb"
+    },
+    {
+      "path": "src/viewer/scenery.cpp",
+      "bytes": 13765,
+      "sha256": "4c8d82df335ed993ebbe53e7a7beb298050b1dcca49f145d1f42f9c64ff24f68"
+    },
+    {
+      "path": "tests/viewer_about_test.cpp",
+      "bytes": 6910,
+      "sha256": "e4c8148724795e703f1f9d8395e836a8fab66be8ea58d6913a1573ed07ac044f"
+    },
+    {
+      "path": "tests/viewer_art_test.cpp",
+      "bytes": 5788,
+      "sha256": "01fdb303ba1371fa445f81c31b3756e353c5ecc1174f2c212d484ad97e057236"
+    },
+    {
+      "path": "tests/viewer_assets_test.cpp",
+      "bytes": 11240,
+      "sha256": "775b16037a8dc9a98b434507f03a4d4b047a0806c9ed6e05cab19c22f8d10485"
+    },
+    {
+      "path": "tests/viewer_atmosphere_test.cpp",
+      "bytes": 7615,
+      "sha256": "5dca0d7ad66dda942708d92d814e11e85dc9d184071156db12c988ae505fc983"
+    },
+    {
+      "path": "tests/viewer_character_debug_test.cpp",
+      "bytes": 25802,
+      "sha256": "916ef8b400912e4810184448b1413576ee036f29e943a28f98242aed70067cda"
+    },
+    {
+      "path": "tests/viewer_fbx_test.cpp",
+      "bytes": 8354,
+      "sha256": "da837a9ed9d88b0ab7e3f20ce231187f18817a01f6573ba02a1f1cec5ecb0782"
+    },
+    {
+      "path": "tests/viewer_geometry_test.cpp",
+      "bytes": 25564,
+      "sha256": "ee93ad1abaf5ff87573cfb1fdc7ac3cfb367faccd8c8b6c495ed56077150804e"
+    },
+    {
+      "path": "tests/viewer_glow_test.cpp",
+      "bytes": 8848,
+      "sha256": "224cc8d6186d787d12c534ab0139c9c54ea66994dabc88cdb8f5999421e9e399"
+    },
+    {
+      "path": "tests/viewer_interaction_test.cpp",
+      "bytes": 22229,
+      "sha256": "030a731a83eb5364f4b08cfc311a085e463de6abbfac62b20cee81aa422a0418"
+    },
+    {
+      "path": "tests/viewer_joints_lighting_test.cpp",
+      "bytes": 10947,
+      "sha256": "6cc8e3b10f64910b3c116109d48718ad6b9747d7bb2a3621d791442a58053629"
+    },
+    {
+      "path": "tests/viewer_material_test.cpp",
+      "bytes": 10433,
+      "sha256": "9907dd3c412bc7c86fc3fe4795ef72ff22af09d51239a0041fe68a60dab3ac3b"
+    },
+    {
+      "path": "tests/viewer_music_test.cpp",
+      "bytes": 7758,
+      "sha256": "3c1bfa0439cd1fdce5d7dd40f931a735538aba684a383fa1dfb867c7006c7766"
+    },
+    {
+      "path": "tests/viewer_particles_test.cpp",
+      "bytes": 13092,
+      "sha256": "b47863bd443dac58714acbaa45e6dbfd83983c65217db8b596436edb4bd715bf"
+    },
+    {
+      "path": "tests/viewer_scenery_test.cpp",
+      "bytes": 9794,
+      "sha256": "97fd356aae57ff6ced132d7840258d4eeb16751908cc613eadb3d059233bc317"
+    },
+    {
+      "path": "tests/viewer_selection_test.cpp",
+      "bytes": 6215,
+      "sha256": "b16b7a2c19f8cfbdf997c8069ac3bcf0eb658a25b16530672d81e16ab8001695"
+    },
+    {
+      "path": "tests/viewer_stage_rendering_test.cpp",
+      "bytes": 6884,
+      "sha256": "5f3c4cb295d4f3cc92ef5b5a3ab4bbd42306b0d21f59f334023d52ca02490a11"
+    },
+    {
+      "path": "tests/viewer_stages_test.cpp",
+      "bytes": 12462,
+      "sha256": "1664d079cfb0b95cf4ee24da780d65ed6ff9ffcd6600fef354b766d48442052a"
+    },
+    {
+      "path": "third_party/imgui/LICENSE.txt",
+      "bytes": 1083,
+      "sha256": "0ebf8feb061536bdebd7c6a365b64808ae3479048b1c44113e19037680c5f2be"
+    },
+    {
+      "path": "third_party/imgui/backends/imgui_impl_dx11.cpp",
+      "bytes": 29396,
+      "sha256": "90ac17849898848cf85e28d9a408160c1e7d7abfc201d052c494ca3937c84a89"
+    },
+    {
+      "path": "third_party/imgui/backends/imgui_impl_dx11.h",
+      "bytes": 1629,
+      "sha256": "b5dde74ca55af2e58c6ceef591a6b64b4bbbe43ae3582e1bce5bfb643a7dde2b"
+    },
+    {
+      "path": "third_party/imgui/backends/imgui_impl_win32.cpp",
+      "bytes": 47276,
+      "sha256": "8b83f38f23004b6887eb1895ff6882b35859615b8ffb0f62207517e982929806"
+    },
+    {
+      "path": "third_party/imgui/backends/imgui_impl_win32.h",
+      "bytes": 3524,
+      "sha256": "8354a2f34495b807f29b4dff0e6b11fb6e06ad92ac2d15a4f8ab2fdd57c199f8"
+    },
+    {
+      "path": "third_party/imgui/imconfig.h",
+      "bytes": 11152,
+      "sha256": "f49f0636fc8be093a41f4661f04cabd1bff5fb49209a57538f407824fb81bb5f"
+    },
+    {
+      "path": "third_party/imgui/imgui.cpp",
+      "bytes": 838467,
+      "sha256": "c1b968bee46479d4383ef84c3794b5c11d7349710612d6d4ce77a92a8acd4909"
+    },
+    {
+      "path": "third_party/imgui/imgui.h",
+      "bytes": 364107,
+      "sha256": "0ba5a8f2ebddb6d9f32f8bd8e08dab8f4a0fdc1a17b10d1dbb3bb60a8f922fb2"
+    },
+    {
+      "path": "third_party/imgui/imgui_draw.cpp",
+      "bytes": 234351,
+      "sha256": "291d5df1c1e4419c05932197599a30daa0e5ba3dc20adfd9913f5b6dd5ad9a07"
+    },
+    {
+      "path": "third_party/imgui/imgui_internal.h",
+      "bytes": 271363,
+      "sha256": "93c8b237f7d79e0f4affa6abfd896e586bb385e97558bb699a3d33bb00de914c"
+    },
+    {
+      "path": "third_party/imgui/imgui_tables.cpp",
+      "bytes": 243349,
+      "sha256": "f4d94aaee884333f1fad83aa75cb90e8b54797eff416e95fd8ab6764dac73065"
+    },
+    {
+      "path": "third_party/imgui/imgui_widgets.cpp",
+      "bytes": 502908,
+      "sha256": "fd56fbb467b41e70905bd50c9a405b22e2c9a06aaa104adbcd46206c795ade66"
+    },
+    {
+      "path": "third_party/imgui/imstb_rectpack.h",
+      "bytes": 20344,
+      "sha256": "2efa3d5f7d003c19743b15155dad9f46d9f9fc783a18893d703b431d3c990972"
+    },
+    {
+      "path": "third_party/imgui/imstb_textedit.h",
+      "bytes": 55208,
+      "sha256": "99d5970b305c9865e7a1fcdeed0ee71cc3701bbc66bec45cf8b0c460e16d9cdd"
+    },
+    {
+      "path": "third_party/imgui/imstb_truetype.h",
+      "bytes": 199485,
+      "sha256": "87f08919ae8e7223451d0e9d06b62829075d3e920c9e6ad436db9d7e7427ffce"
+    },
+    {
+      "path": "third_party/manifest.json",
+      "bytes": 5802,
+      "sha256": "cb08b7898d9d3a4cf703a3797da38a760f544d2c263949956843527e3ea58d30"
+    },
+    {
+      "path": "third_party/miniz/CMakeLists.txt",
+      "bytes": 13227,
+      "sha256": "c77a883d04d169913c99f14d0666b1f7d8d89402f5dd0878520e993b7d055290"
+    },
+    {
+      "path": "third_party/miniz/ChangeLog.md",
+      "bytes": 19528,
+      "sha256": "08edeef92c433eadd13ffc2ff1a3e26d646054bfada2e79fc4a523729bf8789d"
+    },
+    {
+      "path": "third_party/miniz/Config.cmake.in",
+      "bytes": 64,
+      "sha256": "b5e27b111af9abc51388098e9c3d72e63f561723e1f1facc6f2713a4f9f8d730"
+    },
+    {
+      "path": "third_party/miniz/LICENSE",
+      "bytes": 1162,
+      "sha256": "6f20fa7672b00e2e975c291df737cf227addf3ad32e36fef3fe0f416e4664d3d"
+    },
+    {
+      "path": "third_party/miniz/miniz.c",
+      "bytes": 25991,
+      "sha256": "f23204efee2bfaffb72a974d2e28c64c3c1d9787144b5c5890f129c465e467bd"
+    },
+    {
+      "path": "third_party/miniz/miniz.h",
+      "bytes": 27754,
+      "sha256": "232abb0b807fd4962a8e61822459dd49baecb61d0e557f23497732978640f6a7"
+    },
+    {
+      "path": "third_party/miniz/miniz.pc.in",
+      "bytes": 331,
+      "sha256": "f2610ba918e57f65144af3d438fd020965cd3fa2b3bc7391ffbeb99fc85ce331"
+    },
+    {
+      "path": "third_party/miniz/miniz_common.h",
+      "bytes": 2719,
+      "sha256": "6320fa10a5d21db9f78594d92745bc27593c1e6bed657104c22da0a9bd687b49"
+    },
+    {
+      "path": "third_party/miniz/miniz_tdef.c",
+      "bytes": 75361,
+      "sha256": "30aa8bf68ebcd6d15f03e1db3c7e72d70a038d4a44e74e69193185ea9187ecd0"
+    },
+    {
+      "path": "third_party/miniz/miniz_tdef.h",
+      "bytes": 10733,
+      "sha256": "d62da02953c3834dfcbde4db026c6d9345013ef9b0e53185131016a3a4e48c33"
+    },
+    {
+      "path": "third_party/miniz/miniz_tinfl.c",
+      "bytes": 40259,
+      "sha256": "ff9cc5426df23a78070b5b8fa2dcb7aea68faac466169a883b4ffb8727532350"
+    },
+    {
+      "path": "third_party/miniz/miniz_tinfl.h",
+      "bytes": 8695,
+      "sha256": "da4850920fdf09f8877d9affabe1ebba1852ce4b1ebbd121f2ba7a7ea8e57e5d"
+    },
+    {
+      "path": "third_party/miniz/miniz_zip.c",
+      "bytes": 208227,
+      "sha256": "3c1f90797c02ddc9d6bfcdf7079f5ea6f6212f257ed8745f2334dd021d697669"
+    },
+    {
+      "path": "third_party/miniz/miniz_zip.h",
+      "bytes": 26742,
+      "sha256": "b062a5def545445c73fd1d664e35a89165dfb0d996ab848f507244e819cfcf04"
+    },
+    {
+      "path": "third_party/miniz/readme.md",
+      "bytes": 4784,
+      "sha256": "b4ea367be28a36e5386f65118b73962bc659a67936d248be68b7a7c03b8d359b"
+    },
+    {
+      "path": "third_party/xbox-disc-reader/LICENSE",
+      "bytes": 1063,
+      "sha256": "b61d0b216ea6b3a6be922ef85f6348568069fb3c5fc816d021ee66ec43de8157"
+    },
+    {
+      "path": "third_party/xbox-disc-reader/kernel/disc.cpp",
+      "bytes": 6531,
+      "sha256": "db4882b55a02eda3fc73bd7d73e0f39aa254bedec2589c751d5c8d0199427ed6"
+    },
+    {
+      "path": "third_party/xbox-disc-reader/kernel/disc.h",
+      "bytes": 1885,
+      "sha256": "b10161ac0cecddc4d51e6611d053d2b0325e40682150f9db7ea69e0ca7b4ce2c"
+    },
+    {
+      "path": "tools/build_viewer.py",
+      "bytes": 3279,
+      "sha256": "f5f845eec152a02fb33fae356e7f7165e0ee73c66090933a40d23c628416429b"
+    },
+    {
+      "path": "tools/package_viewer.py",
+      "bytes": 1717,
+      "sha256": "88ab39525ee9497f7ab9e17c39eccbaf1ccdc7688ec12dc95c1c1f2801d930d5"
+    },
+    {
+      "path": "tools/prepare_viewer_icon.py",
+      "bytes": 1499,
+      "sha256": "b09c87cd27e77b9360825b823d78bcd654dac7d2070224e0a89399c8fecae5ec"
+    }
+  ],
+  "local_source": {
+    "base_commit": "7ddda06a08c9f7088dae963cd07e74cde31bc406",
+    "working_tree_includes_uncommitted_viewer_files": true,
+    "selected_files_checked_stable_before_copy_and_after_build": true,
+    "files": [
+      {
+        "path": "docs/VIEWER.md",
+        "bytes": 50519,
+        "sha256": "97346a76f7d758e24a54f44eba3aeb9b257cf06b993b6211fb8f00122d60da6f"
+      },
+      {
+        "path": "resources/viewer-icon.png",
+        "bytes": 1989834,
+        "sha256": "3654d99f1524103614d8438471abe487e12628ae85a5295d947e29ab7c9f6393"
+      },
+      {
+        "path": "resources/viewer-icon.rgba",
+        "bytes": 262152,
+        "sha256": "227811353ce160d8d05675d8eaf0c93877c80a3f859b0d6cb1d8fcb1e8d8bfb5"
+      },
+      {
+        "path": "resources/viewer-readme.txt",
+        "bytes": 26741,
+        "sha256": "908dc63c31207d3207fcd891fbed4968705c90cefac8b564c2385cf525d932c1"
+      },
+      {
+        "path": "resources/viewer.ico",
+        "bytes": 169426,
+        "sha256": "5f0ea28ed8e6090bb04e14d66a66ac9691cedeb667d2b7b3abfd58643c7ead82"
+      },
+      {
+        "path": "resources/viewer.rc",
+        "bytes": 123,
+        "sha256": "f021ff763a151a5a798b7174568e5dba8b65a2e2147c49292e2f35c6a1a33a4a"
+      },
+      {
+        "path": "resources/viewer_ids.h",
+        "bytes": 66,
+        "sha256": "c5b4240eb3ae51de0abb707c4eef5c353d7c129e438f6fec88fb361420f16db8"
+      },
+      {
+        "path": "src/viewer/action_graph.cpp",
+        "bytes": 2922,
+        "sha256": "6d0ed5b3a0f3ceffa1766366115821587ad02da3507f500d492a655765b60da4"
+      },
+      {
+        "path": "src/viewer/animation.cpp",
+        "bytes": 34924,
+        "sha256": "00b06fc2b201d062956e1298d07839616102217cbee84677e7479e05f8126865"
+      },
+      {
+        "path": "src/viewer/art.cpp",
+        "bytes": 2329,
+        "sha256": "8c433bed1d628e1695a1359f7c52405fe76fc2b7d2c99d0628c9ac1fd94e0df5"
+      },
+      {
+        "path": "src/viewer/assets.cpp",
+        "bytes": 59555,
+        "sha256": "3dbeb93cd79b1adf886cd66ff9f5be533978fb59a75bd3ab911e98e37136b4f3"
+      },
+      {
+        "path": "src/viewer/assets.h",
+        "bytes": 11701,
+        "sha256": "f7f4ed9db59a244f83de24936dd89dcd909b006f0ab7d2c5a00641ff1d46c356"
+      },
+      {
+        "path": "src/viewer/atmosphere.cpp",
+        "bytes": 1323,
+        "sha256": "4ea8ab547ee22b99eb41bc252c1e800c773742a40e4d72680e2ce914e116989b"
+      },
+      {
+        "path": "src/viewer/bloom.h",
+        "bytes": 7843,
+        "sha256": "43c26a2b44a9705fceb06160c28d9ba7812e66b0606b33af1267965cb7e82dc4"
+      },
+      {
+        "path": "src/viewer/branding.h",
+        "bytes": 1140,
+        "sha256": "73fc9664e6d1aabd51832a6ea4ef8b4cd3823f803ca78a77ac27f3d48a8bfce1"
+      },
+      {
+        "path": "src/viewer/camera.h",
+        "bytes": 3625,
+        "sha256": "e55198edfc02fc5a978377068abfb2adbe82a2ad44d3a4bdb7cdc1058eea17f6"
+      },
+      {
+        "path": "src/viewer/character_debug.cpp",
+        "bytes": 45720,
+        "sha256": "7b936b027e8946f7127efec187196a586e39cb76c71c4e998e4409c9d28a21b1"
+      },
+      {
+        "path": "src/viewer/character_debug.h",
+        "bytes": 2110,
+        "sha256": "a9d8a81612a5d6cfea82fb5df434a85a33d6a89fbc28309ac0fa5c5a92d8285a"
+      },
+      {
+        "path": "src/viewer/fbx.cpp",
+        "bytes": 14278,
+        "sha256": "194af4ddbb5b37035fbac13b1eb8ad320d5abccff52ddf33dc3ec1f5cb7fa72c"
+      },
+      {
+        "path": "src/viewer/geometry.cpp",
+        "bytes": 21225,
+        "sha256": "3a1495b498345848ea846915fb01bf36f741559e39b1a4d609fe88356717c71a"
+      },
+      {
+        "path": "src/viewer/main.cpp",
+        "bytes": 89503,
+        "sha256": "4bbed1ea13ffbe5d75e367c22674ec7c6db12898ddf93e8096a47399a346905a"
+      },
+      {
+        "path": "src/viewer/music.cpp",
+        "bytes": 5638,
+        "sha256": "836593bbf7003f02998142f2d4bb9d5666ea8af18cbedc214aa9eb55e122b679"
+      },
+      {
+        "path": "src/viewer/music.h",
+        "bytes": 949,
+        "sha256": "1f9a0dbcd2f02fb81dca9a439c1d48e3956b3e5081462cfc8378b5e58ce2e4f5"
+      },
+      {
+        "path": "src/viewer/music_player.cpp",
+        "bytes": 3549,
+        "sha256": "68cb6a9c97259586848c59e1dd48e3577f8e3711254ecbd0f6f4b97cf18b2dcd"
+      },
+      {
+        "path": "src/viewer/particles.cpp",
+        "bytes": 22523,
+        "sha256": "f68b8b378892a8ab589ea9d6653c0b49d1f840b01501f3e02cbb7fb9c58dd9e0"
+      },
+      {
+        "path": "src/viewer/renderer.h",
+        "bytes": 44227,
+        "sha256": "2f491c2092e5c2aa2c14345e6438e23789c61dd626bf5f523e221c3b9893ddac"
+      },
+      {
+        "path": "src/viewer/scenery.cpp",
+        "bytes": 13765,
+        "sha256": "4c8d82df335ed993ebbe53e7a7beb298050b1dcca49f145d1f42f9c64ff24f68"
+      },
+      {
+        "path": "tests/viewer_about_test.cpp",
+        "bytes": 6910,
+        "sha256": "6a81f20955c218748993e8eb75c485d3caba00ea7a06f8fbd8407230585ca0f7"
+      },
+      {
+        "path": "tests/viewer_art_test.cpp",
+        "bytes": 5788,
+        "sha256": "01fdb303ba1371fa445f81c31b3756e353c5ecc1174f2c212d484ad97e057236"
+      },
+      {
+        "path": "tests/viewer_assets_test.cpp",
+        "bytes": 11581,
+        "sha256": "30078da77530efa8866a7a1694569b1cac0307559abaf101e58b09c48b9fd633"
+      },
+      {
+        "path": "tests/viewer_atmosphere_test.cpp",
+        "bytes": 7615,
+        "sha256": "5dca0d7ad66dda942708d92d814e11e85dc9d184071156db12c988ae505fc983"
+      },
+      {
+        "path": "tests/viewer_character_debug_test.cpp",
+        "bytes": 26425,
+        "sha256": "92a1d5ecb40093e8124b066fe994639729e25a92b02ff7022c610757a4e14bc9"
+      },
+      {
+        "path": "tests/viewer_fbx_test.cpp",
+        "bytes": 8354,
+        "sha256": "da837a9ed9d88b0ab7e3f20ce231187f18817a01f6573ba02a1f1cec5ecb0782"
+      },
+      {
+        "path": "tests/viewer_geometry_test.cpp",
+        "bytes": 26199,
+        "sha256": "ecb2928e67326edbbc9cbf171f669aeb7c6cf44f4d064df938347d40e2041b71"
+      },
+      {
+        "path": "tests/viewer_glow_test.cpp",
+        "bytes": 8848,
+        "sha256": "224cc8d6186d787d12c534ab0139c9c54ea66994dabc88cdb8f5999421e9e399"
+      },
+      {
+        "path": "tests/viewer_interaction_test.cpp",
+        "bytes": 22809,
+        "sha256": "9cf52707a96f8eca72fd47a48e57102987bb42511286f9f5f608af7259abb9b9"
+      },
+      {
+        "path": "tests/viewer_joints_lighting_test.cpp",
+        "bytes": 11246,
+        "sha256": "b67f8aa8f79cface90a07d0d4023c352edf9c0d976e74656824e734055f7b818"
+      },
+      {
+        "path": "tests/viewer_material_test.cpp",
+        "bytes": 10693,
+        "sha256": "51363f05f3687232fa6f4781e152bbf4f5cb82a4923afe2e2b5584ae9fc89c4d"
+      },
+      {
+        "path": "tests/viewer_music_test.cpp",
+        "bytes": 7758,
+        "sha256": "3c1bfa0439cd1fdce5d7dd40f931a735538aba684a383fa1dfb867c7006c7766"
+      },
+      {
+        "path": "tests/viewer_particles_test.cpp",
+        "bytes": 13092,
+        "sha256": "b47863bd443dac58714acbaa45e6dbfd83983c65217db8b596436edb4bd715bf"
+      },
+      {
+        "path": "tests/viewer_scenery_test.cpp",
+        "bytes": 9794,
+        "sha256": "97fd356aae57ff6ced132d7840258d4eeb16751908cc613eadb3d059233bc317"
+      },
+      {
+        "path": "tests/viewer_selection_test.cpp",
+        "bytes": 6215,
+        "sha256": "b16b7a2c19f8cfbdf997c8069ac3bcf0eb658a25b16530672d81e16ab8001695"
+      },
+      {
+        "path": "tests/viewer_stage_rendering_test.cpp",
+        "bytes": 6884,
+        "sha256": "5f3c4cb295d4f3cc92ef5b5a3ab4bbd42306b0d21f59f334023d52ca02490a11"
+      },
+      {
+        "path": "tests/viewer_stages_test.cpp",
+        "bytes": 12462,
+        "sha256": "1664d079cfb0b95cf4ee24da780d65ed6ff9ffcd6600fef354b766d48442052a"
+      },
+      {
+        "path": "tools/prepare_viewer_icon.py",
+        "bytes": 1499,
+        "sha256": "b09c87cd27e77b9360825b823d78bcd654dac7d2070224e0a89399c8fecae5ec"
+      }
+    ],
+    "integration_adaptations": [
+      "Retained independent root build, packaging tooling, pinned library subsets and notices.",
+      "Added Windows resource compilation and the matching About test from the local viewer CMake configuration.",
+      "Kept standalone viewer display names in the application, About dialog, tests and FBX metadata.",
+      "Adapted manual build instructions and packaged source URL to this independent repository.",
+      "Normalized text files to LF and explicitly marked the RGBA artwork binary."
+    ]
+  }
+}

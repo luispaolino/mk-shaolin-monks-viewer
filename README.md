@@ -29,11 +29,14 @@ You supply your own USA/Europe Xbox ISO/XISO or complete extracted game source. 
 
 | Windows x64 package | Size |
 | --- | --- |
-| [ShaolinMonksViewer-v1.0.0-Windows-x64.zip](release/v1.0.0/ShaolinMonksViewer-v1.0.0-Windows-x64.zip) | 0.734 MiB download / 1.459 MiB expanded |
+| [ShaolinMonksViewer-v2026.10.27-Windows-x64.zip](release/v2026.10.27/ShaolinMonksViewer-v2026.10.27-Windows-x64.zip) | 0.991 MiB download / 1.872 MiB expanded |
 
-[SHA-256 checksums](release/v1.0.0/SHA256SUMS.txt) · [Release notes](release/v1.0.0/RELEASE_NOTES.md) · [Build provenance](release/v1.0.0/PROVENANCE.json)
+[SHA-256 checksums](release/v2026.10.27/SHA256SUMS.txt) &middot; [Build notes](release/v2026.10.27/RELEASE_NOTES.md) &middot; [Source and build provenance](release/v2026.10.27/PROVENANCE.json)
 
-This package contains the existing viewer build from **October 19, 2026 (UTC)**. `v1.0.0` is the repository package label. The executable has no embedded application version or source-commit identifier; the existing ZIP has not been rebuilt from this repository snapshot. No final release tag or GitHub Release has been published.
+Built **October 27, 2026 (UTC)** from the matching standalone source, with all
+**17 CTest checks passing**. Includes embedded application artwork and **Help > About**.
+The dated package label is separate from the executable's development build date.
+The [original October 19 package](release/v1.0.0/RELEASE_NOTES.md) remains available.
 
 ## Features
 
@@ -68,11 +71,12 @@ With Windows x64, Python 3 and Visual Studio C++ tools installed:
 python tools/build_viewer.py --test
 ```
 
-**Validated:** standalone Windows x64 Release build and all 16 existing CTest checks passed.
+**Validated:** standalone Windows x64 Release build and all 17 CTest checks passed.
 
 See [build instructions](docs/BUILDING.md) for prerequisites, output paths and
-the synthetic/headless test workflow. Source-build validation and the retained
-October release executable are separate; the ZIP is not replaced by a new build.
+the synthetic/headless test workflow. The latest ZIP was built from the exact
+source commit recorded in its provenance. Physical hardware and full original-game
+behavior are outside these automated checks.
 
 ## Licensing and Credits
 
