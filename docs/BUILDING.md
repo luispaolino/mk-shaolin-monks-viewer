@@ -24,7 +24,7 @@ The executable is `build/viewer/ShaolinMonksViewer.exe`. All build intermediates
 stay under `build/`. `--jobs 2` limits compiler parallelism; `--build-dir` selects
 a different output directory.
 
-The existing 16 CTest checks use synthetic data, hidden or windowless WARP
+The 17 CTest checks use synthetic data, hidden or windowless WARP
 rendering, queued test input, and silent audio mode. Their temporary fixtures are
 isolated under the build directory. They do not launch a visible game or require
 original game data. These checks do not establish physical-device behavior or
@@ -45,11 +45,12 @@ ctest --test-dir build/viewer --output-on-failure
 python tools/package_viewer.py --exe build/viewer/ShaolinMonksViewer.exe
 ```
 
-This creates a new local package under `dist/` from the specified executable,
+This creates a local package under `dist/` from the specified executable,
 player instructions, and license notices. Inspect it before distribution.
-The separately retained `release/v1.0.0/` artifact contains the existing October
-2026 executable. Validating the independent source build does not mean that
-the archived executable was rebuilt from this corrected source layout.
+The latest checked-in build is under `release/v2026.10.27/`, with its exact
+source commit, build-input inventory, test outcomes and SHA-256 checksums.
+The separately retained `release/v1.0.0/` artifact contains the original
+October 19 executable and retains its own provenance.
 
 Users supply their own supported original game files when running the viewer.
 Never include those files, extracted assets, saves, logs, or captures in a package.

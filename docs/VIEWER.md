@@ -1,6 +1,6 @@
 # Standalone 3D viewer
 
-`ShaolinMonksViewer.exe` is a standalone Windows x64 asset viewer for the original Xbox game.
+`ShaolinMonksViewer.exe` is a standalone Windows x64 asset viewer for Mortal Kombat: Shaolin Monks.
 It reads the original USA/Europe Xbox ISO/XISO or extracted game archives directly.
 It starts with the character catalog and supports textured meshes, original vertex
 normals, skeleton joints, named animation clips, looping playback, frame scrubbing,
@@ -26,6 +26,11 @@ Choose **Open game source** and select an image, `GAMEDATA.WAD`, or `default.xbe
 An extracted source needs all eight archive banks and the original `default.xbe`
 in the same directory. The executable supplies character bone name metadata;
 its game code is not executed by the viewer.
+
+**Help > About**, beside **File**, opens a centered dialog with the viewer emblem,
+project name, development build date, and developer credit. It works before loading
+game files. The same bronze-outlined charcoal dragon emblem is embedded in the Windows
+executable, title bar, and taskbar; no separate icon files are needed at runtime.
 
 ### Character Debug
 
@@ -549,26 +554,41 @@ The sky pass does not reproduce every original material or procedural sky effect
 Lava-textured barriers and light/shadow overlays can also differ from gameplay when
 they depend on event state or material passes outside the diffuse preview.
 
-## Build
+## Build and package
 
-The independent source build uses the included ImGui, miniz and small Xbox disc
-reader subsets. It does not need a game executable, generated translation, game
-build, external SDK checkout or LLVM. See [BUILDING.md](BUILDING.md) and
-[UPSTREAM.md](../UPSTREAM.md).
+The standalone build uses the included pinned ImGui, miniz and read-only Xbox
+disc-reader source subset. It requires Windows x64, Python 3 and Visual Studio
+C++ tools with the Windows SDK and bundled CMake/Ninja. No game build, external
+SDK checkout, LLVM installation or original game file is needed to compile it.
+
+From the repository root:
 
 ```powershell
 python tools/build_viewer.py --test
 python tools/package_viewer.py --exe build/viewer/ShaolinMonksViewer.exe
 ```
 
-The builder discovers Visual Studio, checks the dependency manifest, and keeps
-outputs under `build/`. Packaging writes a new local ZIP and checksum to `dist/`.
-The retained October release executable has its own recorded provenance.
+The script verifies `third_party/manifest.json`, loads the Visual Studio x64
+environment, and builds into `build/viewer/`. `--jobs` and `--build-dir` select
+compiler parallelism and output location. The ZIP and checksum are written to
+`dist/` using an explicit package file list. See [BUILDING.md](BUILDING.md).
+
+Windows resources compile the checked-in `resources/viewer.ico` and
+`resources/viewer-icon.rgba`. The generated source artwork is
+`resources/viewer-icon.png`. To regenerate its ten native icon sizes and the
+256-pixel About image, install Python's Pillow package and run
+`python tools/prepare_viewer_icon.py`. Pillow is only an artwork preparation tool;
+normal builds and packaged viewers do not require it. The About image stores
+straight-alpha RGBA8 pixels and is embedded alongside the native icon group.
 
 ## Validation
 
 `ctest --test-dir build/viewer --output-on-failure` runs synthetic mesh, texture,
 skeleton, compressed animation, skin interpolation, and malformed input checks.
+The About check opens Help > About through synthetic input in a hidden WARP window,
+checks opening without game files, closing and reopening, the embedded artwork and
+ten native icon sizes, and layout at 100%, 150%, and 200% text scale. It does not
+launch a visible viewer, emit audio, or move the operating system cursor.
 Particle checks cover malformed command input, inferred-anchor exclusions,
 deterministic seeking and random variation, camera-facing sprites while paused,
 source lifetime/delay/size/alpha, moving and hidden anchors, unchanged source

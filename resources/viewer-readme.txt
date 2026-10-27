@@ -5,6 +5,10 @@ Select your original USA/Europe Xbox ISO/XISO, GAMEDATA.WAD, or default.xbe.
 For an extracted copy, retain default.xbe and all eight GAMEDATA.WAD-WAK banks
 in the same folder. No game files are included in this package.
 
+Help > About, beside File, shows the viewer emblem, project name, development build
+date, and developer credit. It is available before opening game files. The same
+icon is embedded in the executable and its window; no loose artwork is required.
+
 Stage BGM starts enabled in the stage inspector. Selecting a stage plays its
 original area's base music cue with the source ADX loop points. Uncheck Stage BGM
 to stop it, including across subsequent stage selections. Re-enable to restart.

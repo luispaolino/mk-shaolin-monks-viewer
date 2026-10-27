@@ -1,6 +1,7 @@
 #ifndef NOMINMAX
 #define NOMINMAX
 #endif
+#include "branding.h"
 #include "character_debug.h"
 #include "renderer.h"
 #include <algorithm>
@@ -111,6 +112,7 @@ struct Graphics {
     cls.lpfnWndProc = window_proc;
     cls.hInstance = GetModuleHandleW(nullptr);
     cls.hCursor = LoadCursorW(nullptr, IDC_ARROW);
+    cls.hIcon = LoadIconW(cls.hInstance, MAKEINTRESOURCEW(IDI_VIEWER));
     cls.lpszClassName = L"ShaolinAssetViewer";
     RegisterClassW(&cls);
     window = CreateWindowExW(0, cls.lpszClassName, title, WS_OVERLAPPEDWINDOW,
@@ -118,6 +120,12 @@ struct Graphics {
                              nullptr, cls.hInstance, nullptr);
     if (!window)
       throw std::runtime_error("Cannot create viewer window");
+    auto small_icon =
+        LoadImageW(cls.hInstance, MAKEINTRESOURCEW(IDI_VIEWER), IMAGE_ICON,
+                   GetSystemMetricsForDpi(SM_CXSMICON, GetDpiForWindow(window)),
+                   GetSystemMetricsForDpi(SM_CYSMICON, GetDpiForWindow(window)),
+                   LR_SHARED);
+    SendMessageW(window, WM_SETICON, ICON_SMALL, LPARAM(small_icon));
     DXGI_SWAP_CHAIN_DESC desc{};
     desc.BufferCount = 2;
     desc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
@@ -209,6 +217,8 @@ struct Loaded {
 struct App {
   Graphics graphics;
   sv::Renderer renderer{graphics.device.Get(), graphics.context.Get()};
+  sv::ComPtr<ID3D11ShaderResourceView> about_icon;
+  bool about_requested = false;
   sv::Camera camera;
   sv::Model model;
   std::unique_ptr<sv::Source> source;
@@ -261,6 +271,7 @@ struct App {
   uint32_t initial_asset = 6029;
   bool require_initial_asset = false;
   App(bool hidden = false) : graphics(hidden, hidden), music(hidden) {
+    about_icon = renderer.image_view(sv::embedded_icon());
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     auto &io = ImGui::GetIO();
@@ -841,7 +852,7 @@ struct App {
   }
   void sidebar() {
     ImGui::TextColored({1, .51f, .34f, 1}, "SHAOLIN MONKS");
-    ImGui::TextDisabled("ASSET  /  3D VIEWER");
+    ImGui::TextDisabled("3D ASSET VIEWER");
     ImGui::Spacing();
     ImGui::BeginDisabled(busy());
     if (ImGui::Button("Open game source...", {-1, 0}))
@@ -1478,6 +1489,46 @@ struct App {
         "Dynamic joints use recovered spring defaults; gameplay collision "
         "volumes and scripted spring overrides are not simulated.");
   }
+  void about_dialog() {
+    if (about_requested) {
+      ImGui::OpenPopup(sv::about_title);
+      about_requested = false;
+    }
+    float scale = ImGui::GetIO().FontGlobalScale;
+    auto *viewport = ImGui::GetMainViewport();
+    ImGui::SetNextWindowPos(viewport->GetCenter(), ImGuiCond_Appearing,
+                            {.5f, .5f});
+    ImGui::SetNextWindowSize({std::min(520 * scale, viewport->Size.x - 20),
+                              std::min(435 * scale, viewport->Size.y - 20)},
+                             ImGuiCond_Appearing);
+    bool open = true;
+    if (ImGui::BeginPopupModal(sv::about_title, &open,
+                               ImGuiWindowFlags_NoResize)) {
+      auto centered = [](const char *text) {
+        ImGui::SetCursorPosX(
+            (ImGui::GetWindowSize().x - ImGui::CalcTextSize(text).x) * .5f);
+        ImGui::TextUnformatted(text);
+      };
+      ImGui::Dummy({0, 12 * scale});
+      float icon_size = 112 * scale;
+      ImGui::SetCursorPosX((ImGui::GetWindowSize().x - icon_size) * .5f);
+      ImGui::Image(reinterpret_cast<ImTextureID>(about_icon.Get()),
+                   {icon_size, icon_size});
+      ImGui::Dummy({0, 12 * scale});
+      centered("Shaolin Monks Viewer");
+      centered("3D Asset Viewer");
+      ImGui::Dummy({0, 5 * scale});
+      centered(sv::build_label);
+      ImGui::Dummy({0, 5 * scale});
+      centered("Developed by RatonMalo");
+      ImGui::SetCursorPosY(ImGui::GetWindowSize().y - 58 * scale);
+      ImGui::Separator();
+      ImGui::SetCursorPosX(ImGui::GetWindowSize().x - 118 * scale);
+      if (ImGui::Button("OK", {100 * scale, 28 * scale}))
+        ImGui::CloseCurrentPopup();
+      ImGui::EndPopup();
+    }
+  }
   void frame() {
     poll();
     graphics.resize();
@@ -1502,6 +1553,11 @@ struct App {
         if (ImGui::MenuItem("Save viewport...", nullptr, false,
                             !model.parts.empty()))
           screenshot();
+        ImGui::EndMenu();
+      }
+      if (ImGui::BeginMenu("Help")) {
+        if (ImGui::MenuItem("About"))
+          about_requested = true;
         ImGui::EndMenu();
       }
       ImGui::TextDisabled("Xbox assets  /  independent native viewer");
@@ -1711,6 +1767,7 @@ struct App {
     if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_O) && !busy())
       choose();
     ImGui::End();
+    about_dialog();
     ImGui::Render();
     float clear[] = {.05f, .05f, .06f, 1};
     auto *target = graphics.back.Get();

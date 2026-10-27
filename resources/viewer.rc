@@ -1,0 +1,5 @@
+#include <windows.h>
+#include "viewer_ids.h"
+
+IDI_VIEWER ICON "viewer.ico"
+IDR_VIEWER_ABOUT_ICON RCDATA "viewer-icon.rgba"

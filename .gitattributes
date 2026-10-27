@@ -11,6 +11,7 @@
 *.bat text eol=crlf
 *.cmd text eol=crlf
 *.ico binary
+*.rgba binary
 *.png binary
 *.inl text eol=lf
 *.toml text eol=lf

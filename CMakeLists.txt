@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(ShaolinMonksViewer LANGUAGES C CXX)
+project(ShaolinMonksViewer LANGUAGES C CXX RC)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded)
@@ -90,3 +90,16 @@ add_test(NAME viewer_stage_rendering COMMAND viewer_stage_rendering_test)
 add_executable(viewer_fbx_test "${ROOT}/tests/viewer_fbx_test.cpp")
 target_link_libraries(viewer_fbx_test PRIVATE viewer_assets)
 add_test(NAME viewer_fbx COMMAND viewer_fbx_test)
+
+# App-backed tests load the same embedded artwork as the shipped executable.
+set_source_files_properties("${ROOT}/resources/viewer.rc" PROPERTIES
+    OBJECT_DEPENDS "${ROOT}/resources/viewer.ico;${ROOT}/resources/viewer-icon.rgba")
+add_executable(viewer_about_test "${ROOT}/tests/viewer_about_test.cpp")
+
+target_link_libraries(viewer_about_test PRIVATE viewer_assets viewer_imgui d3d11 dxgi d3dcompiler dwmapi user32 gdi32 shell32 comdlg32)
+add_test(NAME viewer_about COMMAND viewer_about_test)
+set_tests_properties(viewer_about PROPERTIES TIMEOUT 30)
+foreach(target ShaolinMonksViewer viewer_interaction_test viewer_music_test viewer_about_test)
+    target_sources(${target} PRIVATE "${ROOT}/resources/viewer.rc")
+    target_include_directories(${target} PRIVATE "${ROOT}/resources")
+endforeach()
