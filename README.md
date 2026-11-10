@@ -6,6 +6,10 @@
 </p>
 
 <p align="center">
+  <a href="#download"><img src="https://img.shields.io/badge/release-v2026.10.27-a6da4b?style=for-the-badge&amp;labelColor=0d1117" alt="Release v2026.10.27" /></a>
+</p>
+
+<p align="center">
   <a href="#download">Download</a> &middot;
   <a href="#features">Features</a> &middot;
   <a href="#quick-start">Quick Start</a> &middot;
